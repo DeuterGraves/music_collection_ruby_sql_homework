@@ -120,7 +120,14 @@ def self.find(id)
 end
 
 
-#albums alphabetical by artist
+#albums alphabetical by artist - OOOH ASK! because you'll need to actually get the list of artists in order, then use that order of artist_ids probably to set the order for the albums list hrm.
+#or - you would just get all the albums and then sort them in ruby... 
+#
+# def self.alpha_artist()
+#   sql = "
+#   SELECT * FROM albums
+#   ORDER BY artist_id ASC
+#   ;"
 
 
 end

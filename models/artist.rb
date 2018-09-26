@@ -71,6 +71,16 @@ end
 
 # edit artist
 
+def update()
+  sql = "
+    UPDATE artists
+    SET name = $1
+    WHERE id = $2
+    ;"
+
+    SqlRunner.run(sql, [@name, @id])
+end
+
 # delete
 
 # find by id

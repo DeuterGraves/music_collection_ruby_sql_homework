@@ -13,7 +13,7 @@ artist1 = Artist.new(
 artist1.save()
 
 artist2 = Artist.new({
-  "name" => "Blue Balls Deluxe"
+  "name" => "Blue Deluxe Balls"
  }
 )
 artist2.save()
@@ -121,6 +121,8 @@ album5.update()
 album7.year = 2002
 album7.update()
 album78.delete()
+artist2.name = "Blue Balls Deluxe"
+artist2.update()
 
 binding.pry
 p "ROCK STARS!!!"
