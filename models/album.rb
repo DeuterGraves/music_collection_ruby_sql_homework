@@ -65,6 +65,20 @@ end
 
 # show artist for album
 
+def artist()
+  # in the album we have the artist_id - on the artist table that's just 'id'
+  sql = "
+    SELECT * FROM artists
+    WHERE id = $1
+  ;"
+
+  results = SqlRunner.run(sql, [@artist_id])
+  artist_hash = results[0]
+  artist= Artist.new(artist_hash)
+
+
+
+end
 ###
 
 # edit album

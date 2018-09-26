@@ -100,6 +100,8 @@ album7 = Album.new({
   })
 album7.save()
 
+p artist3.all_by_artist()
+
 
 binding.pry
 p "ROCK STARS!!!"

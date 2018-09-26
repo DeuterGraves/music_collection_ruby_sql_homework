@@ -50,7 +50,7 @@ def self.list()
 end
 
 # list albums by artists
-# I can interpret this two ways -- 1. all albums by 1 artist, or albums alphabetical by artist name... hrm... which to do first.
+# I can interpret this two ways -- 1. all albums by 1 artist, or albums alphabetical by artist name... hrm... which to do first. albums alpha by artist belongs on the albums class.
 
 def all_by_artist()
 
@@ -64,6 +64,7 @@ def all_by_artist()
   return album_list
 
 end
+
 
 
 ###
