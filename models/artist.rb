@@ -2,6 +2,9 @@ require_relative("../db/sqlrunner.rb")
 
 class Artist
 
+  attr_reader :id
+  attr_accessor :name
+
 def initialize(options)
   @id = options["id"].to_i
   @name = options["name"]
@@ -45,8 +48,6 @@ def self.list()
   artist_list = artist_hashes.map { |artist_hash| Artist.new(artist_hash)  }
 
 end
-
-# * list all artists with ids? (should just happen)
 
 # list albums by artists
 
