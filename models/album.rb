@@ -1,4 +1,4 @@
-require ("../db/sqlrunner.rb")
+require_relative("../db/sqlrunner.rb")
 
 class Album
 
@@ -14,7 +14,33 @@ attr_accessor :title, :year, :genre
 
   end
 
+# delete all?
 
+def self.delete_all()
+  #this is just going to hose everthing. just needs sql, and sql runner.
+  sql = "
+  DELETE FROM albums
+  ;"
+  SqlRunner.run(sql)
+end
+
+# create
+
+
+
+# save
+
+# list all
+
+# show artist for album
+
+###
+
+# edit album
+
+# delete album
+
+# find by ID
 
 
 end
