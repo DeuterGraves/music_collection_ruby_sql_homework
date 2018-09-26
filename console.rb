@@ -100,6 +100,14 @@ album7 = Album.new({
   })
 album7.save()
 
+album78= Album.new({
+  "title" => "Delete the Night",
+  "year" => 2001,
+  "genre" => "Garage Punk",
+  "artist_id" => artist3.id
+  })
+album78.save()
+
 p artist3.all_by_artist()
 
 p album4
@@ -112,6 +120,7 @@ album5.title = "Cold, Blue, and Hateful"
 album5.update()
 album7.year = 2002
 album7.update()
+album78.delete()
 
 binding.pry
 p "ROCK STARS!!!"

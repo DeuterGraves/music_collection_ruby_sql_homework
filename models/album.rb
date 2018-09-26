@@ -96,6 +96,16 @@ end
 
 # delete album
 
+def delete()
+  sql = "
+    DELETE FROM albums
+    WHERE id = $1
+  ;"
+
+  SqlRunner.run(sql, [@id])
+
+end
+
 # find by ID
 
 #albums alphabetical by artist
