@@ -16,11 +16,35 @@ def self.delete_all()
 
 end
 
-# create
+# create/save
 
-# save
+def save()
+  # SQL will need to also return the Iid assigned.
+  sql = "
+  INSERT INTO artists
+  (name)
+  VALUES ($1)
+  RETURNING id;
+  ;"
+
+  # need to pass the variables in as an array as well.
+  # we need the id to come back - so store in a variable.
+  result = SqlRunner.run(sql, [@name])
+  @id = result[0]["id"].to_i
+end
 
 # list all artists
+
+def self.list()
+    # bring back all the artists
+  sql = "
+  SELECT * from artists;
+  "
+  # this will bring back that weird crypic mess, so you'll need to break it out into an array of hashes. GO!
+  artist_hashes = SqlRunner.run(sql)
+  artist_list = artist_hashes.map { |artist_hash| Artist.new(artist_hash)  }
+
+end
 
 # * list all artists with ids? (should just happen)
 
