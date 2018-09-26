@@ -108,6 +108,18 @@ end
 
 # find by ID
 
+def self.find(id)
+  sql = "
+  SELECT * FROM albums
+  WHERE id = $1
+  ;"
+
+  result = SqlRunner.run(sql, [id])
+  album_hash = result.map { |album| Album.new(album)  }
+  return album_hash
+end
+
+
 #albums alphabetical by artist
 
 
