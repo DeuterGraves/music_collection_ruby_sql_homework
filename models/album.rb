@@ -83,9 +83,22 @@ end
 
 # edit album
 
+def update()
+  sql = "
+    UPDATE albums
+    SET (title, year, genre)
+    = ($1, $2, $3)
+    WHERE id = $4
+  ;"
+
+  SqlRunner.run(sql, [@title, @year, @genre, @id])
+end
+
 # delete album
 
 # find by ID
+
+#albums alphabetical by artist
 
 
 end

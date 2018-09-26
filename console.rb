@@ -60,7 +60,7 @@ album3 = Album.new({
 album3.save()
 
 album4 = Album.new({
-  "title" => "Whisky, Whores, and Overtime",
+  "title" => "Whisky, Whores, and Hateful",
   "year" => 1998,
   "genre" => "Hellbilly",
   "artist_id" => artist2.id
@@ -69,7 +69,7 @@ album4.save()
 
 
 album5 = Album.new({
-  "title" => "Cold, Blue, and Hateful",
+  "title" => "Cold, Blue, and Overtime",
   "year" => 1993,
   "genre" => "Hellbilly",
   "artist_id" => artist2.id
@@ -102,6 +102,16 @@ album7.save()
 
 p artist3.all_by_artist()
 
+p album4
+p album5
+p album7
+
+album4.title = "Whisky, Whores, and Overtime"
+album4.update()
+album5.title = "Cold, Blue, and Hateful"
+album5.update()
+album7.year = 2002
+album7.update()
 
 binding.pry
 p "ROCK STARS!!!"
