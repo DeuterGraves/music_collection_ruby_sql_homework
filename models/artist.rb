@@ -50,6 +50,21 @@ def self.list()
 end
 
 # list albums by artists
+# I can interpret this two ways -- 1. all albums by 1 artist, or albums alphabetical by artist name... hrm... which to do first.
+
+def all_by_artist()
+
+  sql = "
+    SELECT * FROM albums
+    WHERE artist_id = $1;
+  "
+
+  album_hashes = SqlRunner.run(sql, [@id])
+  album_list = album_hashes.map {|album_hash| Album.new(album_hash)}
+  return album_list
+
+end
+
 
 ###
 

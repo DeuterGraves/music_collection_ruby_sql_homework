@@ -52,6 +52,17 @@ end
 
 # list all
 
+def self.list()
+  sql ="
+  SELECT * FROM albums
+  ;"
+
+# this retuns that whole mess.
+  result = SqlRunner.run(sql)
+  album_hashes = result.map{ |album| Album.new(album)}
+
+end
+
 # show artist for album
 
 ###
