@@ -83,7 +83,29 @@ end
 
 # delete
 
+def delete()
+  sql = "
+  DELETE FROM artists
+  WHERE id = $1
+  ;"
+
+  SqlRunner.run(sql, [@id])
+
+end
+
 # find by id
+
+def self.find(id)
+  sql = "
+  SELECT * FROM artists
+  WHERE id = $1;
+  "
+
+  results = SqlRunner.run(sql, [id])
+  artist_hash = results[0]
+  artist_object = Artist.new(artist_hash)
+
+end
 
 
   #class end

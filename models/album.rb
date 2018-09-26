@@ -115,13 +115,14 @@ def self.find(id)
   ;"
 
   result = SqlRunner.run(sql, [id])
-  album_hash = result.map { |album| Album.new(album)  }
-  return album_hash
+  album_hash = result[0]
+  album_oject = Album.new(album_hash)
+
 end
 
 
 #albums alphabetical by artist - OOOH ASK! because you'll need to actually get the list of artists in order, then use that order of artist_ids probably to set the order for the albums list hrm.
-#or - you would just get all the albums and then sort them in ruby... 
+#or - you would just get all the albums and then sort them in ruby...
 #
 # def self.alpha_artist()
 #   sql = "

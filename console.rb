@@ -123,6 +123,8 @@ album7.update()
 album78.delete()
 artist2.name = "Blue Balls Deluxe"
 artist2.update()
+artist4.delete()
+
 
 binding.pry
 p "ROCK STARS!!!"
