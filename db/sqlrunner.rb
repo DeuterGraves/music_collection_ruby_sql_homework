@@ -4,7 +4,8 @@ class SqlRunner
 
 # we're passing it values, which is defaulting to an empty array so that this will work even for methods like 'def' which won't have values passed. w/o this the method would flop.
   def self.run (sql, values=[])
-
+    # begin ensure close - this is an interesting block of code. 
+    begin
     # connect to postgress database using the gem
     db = PG.connect({
         dbname: "music_collection",
@@ -16,7 +17,10 @@ class SqlRunner
 
     # here's where we store what gets set up in the database - this will help us get the id - which is generated at the database.
     result = db.exec_prepared("query", values)
-    db.close()
+    # close if the database does exist
+  ensure
+    db.close() if db != nil
+  end
 
     return result
 

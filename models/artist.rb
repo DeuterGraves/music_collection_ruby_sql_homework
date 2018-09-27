@@ -13,6 +13,7 @@ end
 # delete all
 
 def self.delete_all()
+  #on delete cascade can help you here
   sql = "
   DELETE FROM artists;"
   SqlRunner.run(sql)
@@ -103,7 +104,9 @@ def self.find(id)
 
   results = SqlRunner.run(sql, [id])
   artist_hash = results[0]
-  artist_object = Artist.new(artist_hash)
+  #artist_object = Artist.new(artist_hash)
+  #self avoids confusion.
+  artist_object = self.new(artist_hash)
 
 end
 
